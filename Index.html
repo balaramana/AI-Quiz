@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>AI Quiz App</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        button {
+            margin: 10px 5px;
+        }
+    </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./support.js"></script>
+</head>
+
+<body>
+
+    <h2>🧠 AI Quiz App (OpenAI)</h2>
+
+    <button onclick="generateQuiz()">Generate Quiz</button>
+
+    <div id="quiz"></div>
+
+    <button onclick="submitQuiz()">Submit</button>
+
+    <h3 id="result"></h3>
+
+</body>
+
+</html>
