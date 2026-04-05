@@ -3,21 +3,7 @@
 
 <head>
     <title>AI Quiz App</title>
-    <style>
-        body {
-            font-family: Arial;
-            padding: 20px;
-        }
-
-        .question {
-            margin-bottom: 20px;
-        }
-
-        button {
-            margin: 10px 5px;
-        }
-    </style>
-
+    <link href="./style.css" rel="stylesheet" type="text/css"></link>  
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./support.js"></script>
 </head>
@@ -25,15 +11,36 @@
 <body>
 
     <h2>🧠 AI Quiz App </h2>
+    <div id="controls">
+    <select id="quizType" title="Quiz Type">
+        <option value="Azure AZ 900">Azure AZ 900</option>
+        <option value="Azure AI 900">Azure AI 900</option>
+        <option value="Azure AI 200">Azure AI 200</option>
+        <option value="Azure DP 900">Azure DP 900</option>
+        <option value="Azure SC 900">Azure SC 900</option>
+        <option value="Custom">Custom</option>
+    </select>
+    <input type="text" id="customTopic" placeholder="Enter custom topic" style="display:none;" title="Custom Topic"></input>    
+    <select id="questionsCount" title="Number of Questions">
+        <option value="5">5</option>
+        <option value="10">10</option>
+        <option value="15">15</option>
+        <option value="20">20</option>
+    </select>
 
     <button onclick="generateQuiz()">Generate Quiz</button>
+    </div>
 
     <div id="quiz"></div>
 
-    <button onclick="submitQuiz()">Submit</button>
-
+    <div id="submitDiv">
+     <button id="btnSubmit" onclick="submitQuiz()">Submit</button>
+    </div>
     <h3 id="result"></h3>
 
+    <div class="ai-warning-banner" id="aiWarningBanner">
+       AI-generated results may not always be accurate. Please review the questions and answers carefully before making any decisions.
+    </div>
 </body>
 
 </html>
